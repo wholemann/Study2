@@ -1,34 +1,20 @@
-import java.util.ArrayList;
-import java.util.List;
+import common.Attackable;
+import common.Repairable;
+import unit.*;
 
 public class Starcraft {
     public static void main(String[] args) {
-
-        List<Unit> unitList = new ArrayList<Unit>();
-        Marine marine = new Marine(100, 5, 1);
-        //marine.beAttacked();;
-
-        Firebat firebat = new Firebat(100, 7, 2);
-
-        unitList.add(marine);
-        unitList.add(firebat);
-
-        firebat.spondSound();
-        firebat.move();
-        firebat.death();
-
-        marine.spondSound();
-        marine.move();
-        marine.death();
-        marine.attack(firebat);
-//        firebat.printStatus();
-
-        firebat.attack(marine);
-//        marine.printStatus();
-
-        for(Unit unit : unitList) {
-            unit.printStatus();
-        }
+        Unit marine = new Marine(40, 5, 0, "마린");
+        Unit medic = new Medic(60, 0, 1, "메딕");
+        Unit tank = new Tank(150, 30, 1, "시즈탱크");
+//
+//        if (marine instanceof Attackable) {
+//            ((Attackable) marine).attack(medic);
+//        }
+//
+        Scv scv = new Scv(50, 5, 0, "SCV");
+        scv.repair(tank);
+        scv.repair(medic);
 
     }
 }
