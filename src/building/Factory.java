@@ -4,13 +4,13 @@ import common.Liftable;
 import common.LiftableImpl;
 
 public class Factory extends Building implements Liftable {
-    LiftableImpl liftImpl;
-    public Factory(int hp) {
-        super(hp);
+
+    public Factory(int hp, Liftable liftable) {
+        super(hp, liftable);
     }
 
     @Override
     public void lift() {
-
+        liftInterface.lift();
     }
 }

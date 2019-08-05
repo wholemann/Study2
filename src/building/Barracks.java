@@ -3,15 +3,12 @@ import common.*;
 
 public class Barracks extends Building implements Repairable, Liftable {
 
-    LiftableImpl liftImpl;
-
-    public Barracks(int hp) {
-        super(hp);
-        liftImpl = new LiftableImpl();
+    public Barracks(int hp, Liftable liftable) {
+        super(hp, liftable);
     }
 
     @Override
     public void lift() {
-        liftImpl.lift();
+        liftInterface.lift();
     }
 }
